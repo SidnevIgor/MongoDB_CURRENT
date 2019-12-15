@@ -1,0 +1,18 @@
+{
+  "ecmaVersion": 8,
+  "libs": [
+    "underscore"
+  ],
+  "loadEagerly": [
+    "C:\\Users\\igosid01\\OneDrive - ARM\\Desktop\\Additionals\\NodeJS\\HTTP Requests and Express Intro\\express-demo\\node_modules"
+  ],
+  "dontLoad": [],
+  "plugins": {
+    "doc_comment": true,
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    }
+  }
+}
