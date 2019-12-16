@@ -6,7 +6,8 @@ const genres = require('./genres/genres.js');
 const customers = require('./customers/customers.js');
 const movies = require('./movies/movies.js');
 const rentals = require('./rentals/rentals.js');
-const users = require('users/users.js');
+const users = require('./users/users.js');
+const auth = require('./auth/auth.js');
 //we create a custom middleware function that will be added to the processing pipeline
 const logger = require('./middleware/logger.js');
 //we add the configuration of the program
@@ -33,6 +34,7 @@ app.use('/api/customers',customers);
 app.use('/api/movies',movies);
 app.use('/api/rentals',rentals);
 app.use('/api/users',users);
+app.use('/api/auth',auth);
 
 const port = process.env.PORT || 3000;
 app.listen(port, function(){
