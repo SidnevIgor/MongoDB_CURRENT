@@ -12,6 +12,10 @@ const auth = require('./auth/auth.js');
 const logger = require('./middleware/logger.js');
 //we add the configuration of the program
 const config = require('config');
+if(!config.get('jwtPrivateKey')){
+  console.error('FATAL ERROR: jwtPrivateKey value is not defined');
+  process.exit(1);
+}
 //we add 2 validation packages: Joi and Joi-id to validate the schema of created object
 //we add module for checking values
 const Joi = require('joi');

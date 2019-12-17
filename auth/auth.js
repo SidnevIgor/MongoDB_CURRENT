@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const bcrypt = require('bcryptjs'); //this is a module for decoding passwords
 const jwt = require('jsonwebtoken'); //this module will allow us to generate
+const config = require('config'); //we will need this to hide variables, like jwtPassword
 const router = express.Router();
 const {User} = require('../users/users.js');
 //we add module for checking values
@@ -35,7 +36,7 @@ router.post('/', async function(req,res){
         let validPass = await bcrypt.compare(req.body.password,user.password);
         if(!validPass) return res.status(400).send('Invalid email or password');
         else{
-          let token = jwt.sign({_id:user._id}, 'jwtPrivateKey'); //here we generate the token for a user
+          let token = jwt.sign({_id:user._id}, config.get('jwtPrivateKey')); //here we generate the token for a user
           //the jwtPrivateKey is a protection key stored on the server
           res.send(token);
         }
