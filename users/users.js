@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const jwt = require('jsonwebtoken'); //this module will allow us to generate
+const config = require('config'); //we will need this to hide variables, like jwtPassword
 const bcrypt = require('bcryptjs'); //this is a module for decoding passwords
 const router = express.Router();
 //we add module for checking values
@@ -23,8 +25,14 @@ const userSchema = new mongoose.Schema({
     maxlength: 1024
   }
 });
+userSchema.methods.generateAuthToken = function(){
+  let token = jwt.sign({_id:this._id}, config.get('jwtPrivateKey'));
+  return token;
+};
 //we create a class User with a scheme userSchema
 const User = mongoose.model('User',userSchema);
+//we add a function for generating authentication token for a users
+
 //different examples how we can GET all the genres or specific genre
 router.get('/', async function(req,res){
   let user = await User.find().sort('name');
@@ -57,8 +65,8 @@ router.post('/', async function(req,res){
         password: await genPass(req.body.password)
         });
         user = await user.save();
-
-        return res.send({
+        let token = user.generateAuthToken(); //here we generate the token for a user
+        return res.header('x-auth-token',token).send({
           _id: user._id,
           name: user.name,
           email: user.email
