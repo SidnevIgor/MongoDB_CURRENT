@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const auth = require('../middleware/auth.js'); //this will check if user is authorised
 const jwt = require('jsonwebtoken'); //this module will allow us to generate
 const config = require('config'); //we will need this to hide variables, like jwtPassword
 const bcrypt = require('bcryptjs'); //this is a module for decoding passwords
@@ -33,6 +34,10 @@ userSchema.methods.generateAuthToken = function(){
 const User = mongoose.model('User',userSchema);
 //we add a function for generating authentication token for a users
 
+router.get('/me',auth, async function(req,res){
+  let user = await User.findById(req.user._id).select('-password');
+  res.send(user);
+});
 //different examples how we can GET all the genres or specific genre
 router.get('/', async function(req,res){
   let user = await User.find().sort('name');
