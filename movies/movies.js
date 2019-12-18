@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const auth = require('../middleware/auth.js'); //this will check if user is authorised
 const {genreSchema} = require('../genres/genres.js');
 const {Genre} = require('../genres/genres.js');
 const router = express.Router();
@@ -44,7 +45,7 @@ router.get('/:id', async function(req,res){
   else return res.send(movie);
 });
 //example, how we can add a new genre
-router.post('/', async function(req,res){
+router.post('/', auth, async function(req,res){
   let result = validateMovie(req.body);
   if(result.error){
     return res.status(400).send(result.error.details[0].message);
@@ -68,7 +69,7 @@ router.post('/', async function(req,res){
   }
 });
 // example how we can change a genre
-router.put('/:id',async function(req,res){
+router.put('/:id', auth, async function(req,res){
   //Look up the genre
   //If the genre doesnt exists, we return 404
   let movie = await Movie.findById(req.params.id);
@@ -106,7 +107,7 @@ function validateMovie(Movie){
   return result;
 }
 //example how we can delete objects
-router.delete('/:id', async function(req,res){
+router.delete('/:id',auth, async function(req,res){
   let movie = await Movie.find({_id:req.params.id});
   if(!movie){
     return res.status(404).send('The movie with such ID does not exist');

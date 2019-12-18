@@ -1,5 +1,5 @@
 function log(req,res,next){
-  console.log('Logging...');
+  console.log('Getting request');
   next(); //we move the control to the next middleware function
 }
 module.exports=log;

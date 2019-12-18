@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const auth = require('../middleware/auth.js'); //this will check if user is authorised
 const express = require('express');
 const router = express.Router();
 //we add module for checking values
@@ -25,7 +26,7 @@ router.get('/:id',async function(req,res){
   else return res.send(genre);
 });
 //example, how we can add a new genre
-router.post('/', async function(req,res){
+router.post('/',auth, async function(req,res){
   let result = validateGenre(req.body);
   if(result.error){
     return res.status(400).send(result.error.details[0].message);
@@ -37,7 +38,7 @@ router.post('/', async function(req,res){
   return res.send(genre);
 });
 // example how we can change a genre
-router.put('/:id',async function(req,res){
+router.put('/:id',auth, async function(req,res){
   //Look up the genre
   //If the genre doesnt exists, we return 404
   let genre = await Genre.findById(req.params.id);
@@ -65,7 +66,7 @@ function validateGenre(genre){
   return result;
 }
 //example how we can delete objects
-router.delete('/:id', async function(req,res){
+router.delete('/:id', auth, async function(req,res){
   let genre = await Genre.find({_id:req.params.id});
   if(!genre){
     return res.status(404).send('The genre with such ID does not exist');

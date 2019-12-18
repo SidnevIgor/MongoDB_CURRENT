@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth.js'); //this will check if user is authorised
 const {Customer} = require('../customers/customers.js');
 const {Movie} = require('../movies/movies.js');
 const Joi = require('joi');
@@ -69,7 +70,7 @@ router.get('/:id',async function(req,res){
   else return res.send(Rental);
 });
 //example, how we can add a new Rental
-router.post('/', async function(req,res){
+router.post('/',auth, async function(req,res){
   let result = validateRental(req.body);
   if(result.error){
     return res.status(400).send(result.error.details[0].message);
