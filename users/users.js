@@ -24,10 +24,12 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 3,
     maxlength: 1024
-  }
+  },
+  isAdmin: Boolean
 });
 userSchema.methods.generateAuthToken = function(){
-  let token = jwt.sign({_id:this._id}, config.get('jwtPrivateKey'));
+  //now lets set what fields will be inside web token and mix it based on private key
+  let token = jwt.sign({_id:this._id, isAdmin:this.isAdmin}, config.get('jwtPrivateKey'));
   return token;
 };
 //we create a class User with a scheme userSchema
@@ -67,14 +69,16 @@ router.post('/', async function(req,res){
         user = new User({
         name: req.body.name,
         email: req.body.email,
-        password: await genPass(req.body.password)
+        password: await genPass(req.body.password),
+        isAdmin: req.body.isAdmin
         });
         user = await user.save();
         let token = user.generateAuthToken(); //here we generate the token for a user
         return res.header('x-auth-token',token).send({
           _id: user._id,
           name: user.name,
-          email: user.email
+          email: user.email,
+          isAdmin: user.isAdmin
         });
       }
     }
@@ -84,7 +88,8 @@ function validateUser(user){
   const schema = {
     name: Joi.string().min(2).max(50).required(),
     email: Joi.string().required().email(),
-    password: Joi.string().min(3).max(20).required()
+    password: Joi.string().min(3).max(20).required(),
+    isAdmin: Joi.boolean()
   };
   let result = Joi.validate(user,schema);
   return result;
