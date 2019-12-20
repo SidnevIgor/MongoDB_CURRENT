@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const auth = require('../middleware/auth.js'); //this will check if user is authorised
+const adminAuth = require('../middleware/admin.js');
 const express = require('express');
 const router = express.Router();
 //we add module for checking values
@@ -79,7 +80,7 @@ function validateCustomer(customer){
   return result;
 }
 //example how we can delete objects
-router.delete('/:id', auth, async function(req,res){
+router.delete('/:id', [auth,adminAuth], async function(req,res){
   let customer = await Customer.find({_id:req.params.id});
   if(!customer){
     return res.status(404).send('The genre with such ID does not exist');

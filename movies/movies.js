@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const auth = require('../middleware/auth.js'); //this will check if user is authorised
+const adminAuth = require('../middleware/admin.js'); //allow deletion for admin only
 const {genreSchema} = require('../genres/genres.js');
 const {Genre} = require('../genres/genres.js');
 const router = express.Router();
@@ -107,7 +108,7 @@ function validateMovie(Movie){
   return result;
 }
 //example how we can delete objects
-router.delete('/:id',auth, async function(req,res){
+router.delete('/:id',[auth,adminAuth], async function(req,res){
   let movie = await Movie.find({_id:req.params.id});
   if(!movie){
     return res.status(404).send('The movie with such ID does not exist');
