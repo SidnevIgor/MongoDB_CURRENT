@@ -13,12 +13,17 @@ const genreSchema = new mongoose.Schema({
 });
 //we create a class Genre with a scheme genreSchema
 const Genre = mongoose.model('Genre',genreSchema);
-
 //different examples how we can GET all the genres or specific genre
-router.get('/', async function(req,res){
+router.get('/', async function(req,res,next){
+  try{
     console.log('We entered the genres router to get all genres');
     let genres = await Genre.find().sort('name');
     res.send(genres);
+  }
+  catch (ex) {
+    console.log('We entered the catch blog');
+    next(ex);
+  }
 });
 router.get('/:id',async function(req,res,next){
   try{
