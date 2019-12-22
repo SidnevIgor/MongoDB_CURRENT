@@ -58,48 +58,63 @@ rentalFee:{
 const Rental = mongoose.model('Rental',rentalSchema);
 
 //different examples how we can GET all the Rentals or specific Rental
-router.get('/', async function(req,res){
-  let rentals = await Rental.find().sort('customer');
-  return res.send(rentals);
-});
-router.get('/:id',async function(req,res){
-  let rental = await Rental.find({_id:req.params.id});
-  if(!rental){
-    return res.status(404).send('The Rental with such ID does not exist');
+router.get('/', async function(req,res,next){
+  try{
+    let rentals = await Rental.find().sort('customer');
+    return res.send(rentals);
   }
-  else return res.send(Rental);
+  catch (ex) {
+    next(ex);
+  }
+});
+router.get('/:id',async function(req,res,next){
+  try{
+    let rental = await Rental.find({_id:req.params.id});
+    if(!rental){
+      return res.status(404).send('The Rental with such ID does not exist');
+    }
+    else return res.send(rental);
+  }
+  catch (ex) {
+    next(ex);
+  }
 });
 //example, how we can add a new Rental
-router.post('/',auth, async function(req,res){
-  let result = validateRental(req.body);
-  if(result.error){
-    return res.status(400).send(result.error.details[0].message);
-  }
-  else{
-    let customer = await Customer.findById(req.body.customerId);
-    if(!customer) {return res.status(404).send('There is no customer with sich ID');}
+router.post('/',auth, async function(req,res,next){
+  try{
+    let result = validateRental(req.body);
+    if(result.error){
+      return res.status(400).send(result.error.details[0].message);
+    }
     else{
-      let movie = await Movie.findById(req.body.movieId);
-      if(!movie){return res.status(404).send('There is no movie with such ID');}
+      let customer = await Customer.findById(req.body.customerId);
+      if(!customer) {return res.status(404).send('There is no customer with sich ID');}
       else{
-        let rental = new Rental({
-          customer:{
-            _id: customer._id,
-            name: customer.name,
-            phone: customer.phone
-          },
-          movie:{
-            _id: movie._id,
-            title: movie.title,
-            dailyRentalRent: movie.dailyRentalRent
-          }
-        });
-        rental = await rental.save();
-        movie.numberInStock--;
-        movie.save();
-        return res.send(rental);
+        let movie = await Movie.findById(req.body.movieId);
+        if(!movie){return res.status(404).send('There is no movie with such ID');}
+        else{
+          let rental = new Rental({
+            customer:{
+              _id: customer._id,
+              name: customer.name,
+              phone: customer.phone
+            },
+            movie:{
+              _id: movie._id,
+              title: movie.title,
+              dailyRentalRent: movie.dailyRentalRent
+            }
+          });
+          rental = await rental.save();
+          movie.numberInStock--;
+          movie.save();
+          return res.send(rental);
+        }
       }
     }
+  }
+  catch (ex) {
+    next(ex);
   }
 });
 function validateRental(rental){
