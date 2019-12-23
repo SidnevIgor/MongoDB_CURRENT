@@ -1,4 +1,14 @@
-function error(err,req,res,next){
-  res.status(500).send('The server is not accessible at the moment');
+const winston = require('winston');
+
+module.exports = function(err, req, res, next){
+  winston.error(err.message, err);
+ 
+  // error
+  // warn
+  // info
+  // verbose
+  // debug
+  // silly
+
+  res.status(500).send('The connection to the database has been disrupted.');
 }
-module.exports = error;
