@@ -11,10 +11,9 @@ module.exports = function() {
     throw ex;
   });
 
-  winston.add(winston.transports.File, { filename: 'logfile.log' });
+  winston.add(winston.transports.File, { filename: 'logfile.log' }); //we write error in the log file
   winston.add(winston.transports.MongoDB, {
     db: 'mongodb://localhost/vidly',
-    level: 'info'
-  });
+    level: 'error'
+  }); //we write errors in the database
 }
- 
