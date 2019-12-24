@@ -1,5 +1,5 @@
 const winston = require('winston');
-require('winston-mongodb');
+//require('winston-mongodb');
 require('express-async-errors');
 
 module.exports = function() {
@@ -13,8 +13,9 @@ module.exports = function() {
   }); //this line catches all the errors related to Promises/async operations (rejected promises)
 
   winston.add(winston.transports.File, { filename: 'logfile.log' }); //we write error in the log file
-  winston.add(winston.transports.MongoDB, {
+/*  winston.add(winston.transports.MongoDB, {
     db: 'mongodb://localhost/vidly',
     level: 'error'
   }); //we write errors in the database
+  */
 }
