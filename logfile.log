@@ -36,3 +36,19 @@
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:03:45.024Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:04:02.393Z"}
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:04:02.428Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:24:31.195Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:24:31.223Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:25:28.681Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:25:28.712Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:31:11.422Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:31:11.449Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:32:00.387Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:32:00.413Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:42:17.070Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:42:17.103Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:44:52.836Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:44:52.864Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:49:14.345Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:49:14.375Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-24T16:52:14.704Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-24T16:52:14.731Z"}
