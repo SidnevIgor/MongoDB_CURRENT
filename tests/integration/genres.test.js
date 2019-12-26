@@ -1,6 +1,7 @@
 const request = require('supertest'); //here we add a linrary to build http requests
 const {Genre} = require('../../models/genre');
 const {User} = require('../../models/user');
+const mongoose = require('mongoose');
 let server;
 
 describe('api/genres', function(){
@@ -57,6 +58,15 @@ describe('api/genres', function(){
       token = '';
       const res = await exec();
       expect(res.status).toBe(401);
+    });
+    it('Should return 404 error if invalid ID is passed', async function(){
+      const res = await request(server).get('/api/genres/1');
+      expect(res.status).toBe(404);
+    });
+    it('Should return 404 error if no genres with such ID exists', async function(){
+      const id = mongoose.Types.ObjectId();
+      const res = await request(server).get('/api/genres/'+id);
+      expect(res.status).toBe(404);
     });
     it('should return 400 error if genre is less than 5 characters', async function(){
       name = "1234";
