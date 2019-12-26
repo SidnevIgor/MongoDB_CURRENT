@@ -1,5 +1,6 @@
 const request = require('supertest'); //here we add a linrary to build http requests
 const {Genre} = require('../../models/genre');
+const {User} = require('../../models/user');
 let server;
 
 describe('api/genres', function(){
@@ -35,6 +36,39 @@ describe('api/genres', function(){
     it('Should return 404', async function(){
       const res = await request(server).get('/api/genres/1234');
       expect(res.status).toBe(404);
+    });
+  });
+  describe('POST new genre', function(){
+    let token;
+    let name;
+
+    let exec = async function(){
+      const res = await request(server)
+      .post('/api/genres')
+      .set('x-auth-token',token)
+      .send({name: name});
+      return res;
+    };
+    beforeEach(function(){
+      token = new User().generateAuthToken();
+      name = "valid";
+    });
+    it('Should return 401 error if client is not authorised', async function(){
+      token = '';
+      const res = await exec();
+      expect(res.status).toBe(401);
+    });
+    it('should return 400 error if genre is less than 5 characters', async function(){
+      name = "1234";
+      const res = await exec();
+      expect(res.status).toBe(400);
+    });
+    it('should return a new valid genre', async function(){
+      //const token = new User().generateAuthToken();
+      const res = await exec();
+      const genre = await Genre.find({name:"valid"});
+      expect(genre).not.toBeNull();
+      expect(res.body).toHaveProperty('name','valid');
     });
   });
 });
