@@ -143,3 +143,27 @@
 {"message":"Genre validation failed: name: Path `name` (`1234`) is shorter than the minimum allowed length (5).","errors":{"name":{"message":"Path `name` (`1234`) is shorter than the minimum allowed length (5).","name":"ValidatorError","properties":{"message":"Path `name` (`1234`) is shorter than the minimum allowed length (5).","type":"minlength","minlength":5,"path":"name","value":"1234"},"kind":"minlength","path":"name","value":"1234"}},"_message":"Genre validation failed","stack":"ValidationError: name: Path `name` (`1234`) is shorter than the minimum allowed length (5).\n    at new ValidationError (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\node_modules\\mongoose\\lib\\error\\validation.js:31:11)\n    at model.Object.<anonymous>.Document.invalidate (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\node_modules\\mongoose\\lib\\document.js:2461:32)\n    at p.doValidate.skipSchemaValidators (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\node_modules\\mongoose\\lib\\document.js:2310:17)\n    at C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\node_modules\\mongoose\\lib\\schematype.js:1064:9\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)","name":"ValidationError","level":"error","timestamp":"2019-12-26T20:13:07.213Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T20:16:53.451Z"}
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T20:16:53.472Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T22:58:34.169Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T22:58:34.466Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T22:58:34.453Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T22:58:34.476Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:01:51.431Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:01:51.483Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:01:51.731Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:01:51.746Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:03:05.342Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:03:05.408Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:03:05.687Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:03:05.706Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:06:27.875Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:06:27.897Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:06:28.243Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:06:28.257Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:07:00.658Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:07:00.708Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:07:01.012Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:07:01.015Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:07:40.299Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:07:40.351Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-26T23:07:40.610Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-26T23:07:40.621Z"}
