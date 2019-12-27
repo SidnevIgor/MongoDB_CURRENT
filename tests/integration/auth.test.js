@@ -8,7 +8,7 @@ const {Genre} = require('../../models/genre');
    });
    afterEach(async function(){
      await Genre.remove({});
-     server.close();
+     await server.close();
    });
    let token;
 

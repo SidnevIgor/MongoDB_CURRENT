@@ -9,7 +9,7 @@ describe('api/genres', function(){
     server = require('../../index.js');
   });
   afterEach(async function(){
-    server.close();
+    await server.close();
     await Genre.remove({});
   });
   describe('GET', function(){
