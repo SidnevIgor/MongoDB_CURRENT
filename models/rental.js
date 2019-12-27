@@ -1,5 +1,7 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
+const moment = require('moment');
+
 const rentalSchema = new mongoose.Schema({
   customer: {
     type: new mongoose.Schema({
@@ -57,8 +59,12 @@ rentalSchema.statics.lookup = function(customerId,movieId){
   return this.findOne({
     "customer._id": customerId,
     "movie._id": movieId
-  });
+  }); //this is a static method (on the class level)
 };
+rentalSchema.methods.return = function(){
+  this.dateReturned=new Date();
+  this.rentalFee = moment().diff(this.dateOut,'days')*this.movie.dailyRentalRate;
+}; //this is an example of instance method (on the object level)
 const Rental = mongoose.model('Rental', rentalSchema);
 
 function validateRental(rental) {

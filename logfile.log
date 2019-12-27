@@ -370,3 +370,20 @@
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T16:48:11.473Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T16:48:11.840Z"}
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T16:48:11.863Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:01:03.161Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:01:03.186Z"}
+{"message":"moment is not defined","stack":"ReferenceError: moment is not defined\n    at model.Object.<anonymous>.rentalSchema.methods.return (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\models\\rental.js:64:3)\n    at C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\routes\\returns.js:17:16","level":"error","timestamp":"2019-12-27T17:01:03.313Z"}
+{"message":"moment is not defined","stack":"ReferenceError: moment is not defined\n    at model.Object.<anonymous>.rentalSchema.methods.return (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\models\\rental.js:64:3)\n    at C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\routes\\returns.js:17:16","level":"error","timestamp":"2019-12-27T17:01:03.330Z"}
+{"message":"moment is not defined","stack":"ReferenceError: moment is not defined\n    at model.Object.<anonymous>.rentalSchema.methods.return (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\models\\rental.js:64:3)\n    at C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\routes\\returns.js:17:16","level":"error","timestamp":"2019-12-27T17:01:03.351Z"}
+{"message":"moment is not defined","stack":"ReferenceError: moment is not defined\n    at model.Object.<anonymous>.rentalSchema.methods.return (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\models\\rental.js:64:3)\n    at C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\routes\\returns.js:17:16","level":"error","timestamp":"2019-12-27T17:01:03.370Z"}
+{"message":"moment is not defined","stack":"ReferenceError: moment is not defined\n    at model.Object.<anonymous>.rentalSchema.methods.return (C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\models\\rental.js:64:3)\n    at C:\\Users\\igosid01\\OneDrive - Arm\\Desktop\\Additionals\\NodeJS\\MongoDB_CURRENT\\routes\\returns.js:17:16","level":"error","timestamp":"2019-12-27T17:01:03.386Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:01:03.650Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:01:03.661Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:01:03.976Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:01:03.987Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:02:37.613Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:02:37.637Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:02:38.054Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:02:38.062Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:02:38.394Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:02:38.407Z"}
