@@ -399,3 +399,9 @@
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:29:36.899Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:29:37.282Z"}
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:29:37.296Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:32:09.578Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:32:09.607Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:32:10.093Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:32:10.106Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:32:10.415Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:32:10.427Z"}
