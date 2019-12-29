@@ -7,6 +7,9 @@
     "test": "jest --verbose --runInBand",
     "start": "node index.js"
   },
+  "engines":{
+    "node":"12.13.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
