@@ -423,3 +423,7 @@
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:42:32.715Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-27T17:42:33.146Z"}
 {"level":"info","message":"Connected to  mongodb://localhost/genres_tests","timestamp":"2019-12-27T17:42:33.159Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-29T16:36:21.492Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2019-12-29T16:36:21.514Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-29T16:36:30.295Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2019-12-29T16:36:30.330Z"}
