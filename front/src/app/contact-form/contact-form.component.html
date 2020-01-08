@@ -1,0 +1,36 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+    <label for="fullName">Full name*</label>
+    <input required minlength="5" maxlength="50" ngModel name="fullName" #fullName=ngModel id="fullName" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="fullName.touched && !fullName.valid">
+      <div *ngIf="fullName.errors.required">Full name is required</div>
+      <div *ngIf="fullName.errors.minlength">Full name should be minimum {{fullName.errors.minlength.requiredLength}} characters</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email*</label>
+    <input required minlength="5" maxlength="255" ngModel name="email" #email=ngModel id="email" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+      <div *ngIf="email.errors.required">Email is required</div>
+      <div *ngIf="email.errors.minlength">Email should be minimum {{email.errors.minlength.requiredLength}} characters</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password*</label>
+    <input required minlength="5" maxlength="255" ngModel name="password" #password=ngModel id="password" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+      <div *ngIf="password.errors.required">Password is required</div>
+      <div *ngIf="password.errors.minlength">Password should be minimum {{password.errors.minlength.requiredLength}} characters</div>
+    </div>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input ngModel name="isAdmin" type="checkbox">Admin user
+    </label>
+  </div>
+
+  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
