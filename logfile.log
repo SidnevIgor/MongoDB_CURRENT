@@ -431,3 +431,5 @@
 {"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2020-01-12T19:15:40.283Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2020-01-12T19:38:30.257Z"}
 {"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2020-01-12T19:38:30.281Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-01-13T11:36:07.389Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2020-01-13T11:36:07.403Z"}
