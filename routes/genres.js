@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
   res.send(genres);
 });
 
-router.post('/', auth, async (req, res) => {
+router.post('/',/* auth,*/ async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -21,7 +21,7 @@ router.post('/', auth, async (req, res) => {
   res.send(genre);
 });
 
-router.put('/:id', [auth, validateId], async (req, res) => {
+router.put('/:id',/* [auth, validateId] ,*/ async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
