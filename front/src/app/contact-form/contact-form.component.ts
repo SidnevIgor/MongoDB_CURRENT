@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'contact-form',
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent{
-  submit(f){
-    console.log(f);
+  constructor(private service: PostService){ }
+  url = "http://localhost:3000/api/users";
+  addUser(name:HTMLInputElement, email:HTMLInputElement, password:HTMLInputElement, isAdmin:boolean){
+    console.log(isAdmin);
+    this.service.addPost(name, email, password, isAdmin, this.url)
+    .subscribe(responce=>{
+      console.log(responce.json());
+    });
   }
 }

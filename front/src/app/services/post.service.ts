@@ -8,8 +8,13 @@ export class PostService {
   getPosts(url:string){
     return this.http.get(url);
   }
-  addPost(title: HTMLInputElement, url: string){
-    let newItem = {name: title.value};
+  addPost(name:HTMLInputElement, email:HTMLInputElement, password:HTMLInputElement, isAdmin:boolean, url: string){
+    let newItem = {
+      "name": name.value,
+      "email": email.value,
+      "password": password.value,
+      "isAdmin": isAdmin
+    };
     return this.http.post(url,JSON.stringify(newItem), this.getOptions());
   }
   updatePost(post, url: string){
