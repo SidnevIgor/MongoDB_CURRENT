@@ -1,5 +1,11 @@
+//Basic libraries
 import { Component } from '@angular/core';
+//POST service
 import { PostService } from '../services/post.service';
+//Error services
+import {AppError} from '../common/app-error';
+import { BadRequestError } from '../common/bad-request-error';
+import { NotFoundError } from '../common/not-found-error';
 
 @Component({
   selector: 'contact-form',
@@ -16,10 +22,17 @@ export class ContactFormComponent{
       "password": password.value,
       "isAdmin": isAdmin
     };
-    console.log(isAdmin);
     this.service.addPost(newItem, this.url)
     .subscribe(responce=>{
       console.log(responce.json());
+    },(error:AppError)=>{
+      if(error instanceof NotFoundError) alert('404 Not Found error');
+      else{
+        if(error instanceof BadRequestError) alert('400 Bad Request Error');
+        else{
+          alert('Some error occured');
+        }
+      }
     });
   }
 }
