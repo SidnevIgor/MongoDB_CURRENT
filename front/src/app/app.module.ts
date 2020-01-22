@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 //Services
 import { PostService } from './services/post.service';
 import { CategoryComponent } from './category/category.component';
+import { LeftbarComponent } from './leftbar/leftbar.component';
 
 
 
@@ -28,7 +29,8 @@ import { CategoryComponent } from './category/category.component';
     NavbarComponent,
     NotFoundComponent,
     HomeComponent,
-    CategoryComponent
+    CategoryComponent,
+    LeftbarComponent
   ],
   imports: [
     BrowserModule,
