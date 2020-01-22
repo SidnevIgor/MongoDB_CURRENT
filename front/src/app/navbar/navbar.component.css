@@ -4,3 +4,6 @@
     display: block;
     text-align: center;
 }
+.navbar-brand:hover{
+  color: red;
+}

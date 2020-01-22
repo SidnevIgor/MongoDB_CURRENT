@@ -11,5 +11,10 @@ export class LeftbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  getGenre(genre:string):string{
+    return genre;
+  }
+  getCategory():string{
+    return 'all-categories';
+  }
 }

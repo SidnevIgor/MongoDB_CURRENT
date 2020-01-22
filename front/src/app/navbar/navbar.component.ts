@@ -17,6 +17,6 @@ export class NavbarComponent implements OnInit {
     return category;
   }
   getGenre():string{
-    return 'allgenres';
+    return 'all-genres';
   }
 }
