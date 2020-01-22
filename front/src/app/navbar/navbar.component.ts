@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   genre: string;
+  categories = ['New','Classics','Shorties','Nomination','Series','Cartoons'];
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit(){

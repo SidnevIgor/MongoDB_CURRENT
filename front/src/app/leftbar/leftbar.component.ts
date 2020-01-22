@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leftbar.component.css']
 })
 export class LeftbarComponent implements OnInit {
-
+  genres=['Thriller','Horror','Romance','Travel','Comedy','Documentary'];
   constructor() { }
 
   ngOnInit() {

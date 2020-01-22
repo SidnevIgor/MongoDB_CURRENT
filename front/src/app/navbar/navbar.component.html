@@ -1,9 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="">Home</a>
-  <a class="navbar-brand" [routerLink]="['/selection',getCategory('newcomers'),getGenre()]">New comers</a>
-  <a class="navbar-brand" [routerLink]="['/selection',getCategory('classics'),getGenre()]">Classics</a>
-  <a class="navbar-brand" [routerLink]="['/selection',getCategory('short-movies'),getGenre()]">Short movies</a>
-  <a class="navbar-brand" [routerLink]="['/selection',getCategory('nomination'),getGenre()]">Nomination winners</a>
-  <a class="navbar-brand" [routerLink]="['/selection',getCategory('series'),getGenre()]">Series</a>
-  <a class="navbar-brand" [routerLink]="['/selection',getCategory('cartoons'),getGenre()]">Cartoons</a>
+  <a class="navbar-brand" *ngFor="let category of categories"
+  [routerLink]="['/selection',getCategory(category),getGenre()]">{{category}}</a>
 </nav>
