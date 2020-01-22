@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  genre: string;
+  constructor(private route:ActivatedRoute) { }
 
-  constructor() { }
+  ngOnInit(){
 
-  ngOnInit() {
   }
   getCategory(category:string):string{
     return category;
+  }
+  getGenre():string{
+    return 'allgenres';
   }
 }

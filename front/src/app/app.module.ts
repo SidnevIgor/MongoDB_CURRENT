@@ -37,7 +37,7 @@ import { CategoryComponent } from './category/category.component';
     HttpModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path:'category/:name', component: CategoryComponent},
+      {path:'selection/:category/:genre', component: CategoryComponent},
       {path:'**', component: NotFoundComponent}
     ])
   ],

@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" [routerLink]="['/category',getCategory('newcomers')]">New comers</a>
-  <a class="navbar-brand" [routerLink]="['/category',getCategory('classics')]">Classics</a>
-  <a class="navbar-brand" [routerLink]="['/category',getCategory('short-movies')]">Short movies</a>
-  <a class="navbar-brand" [routerLink]="['/category',getCategory('nomination')]">Nomination winners</a>
-  <a class="navbar-brand" [routerLink]="['/category',getCategory('series')]">Series</a>
+  <a class="navbar-brand" [routerLink]="['/selection',getCategory('newcomers'),getGenre()]">New comers</a>
+  <a class="navbar-brand" [routerLink]="['/selection',getCategory('classics'),getGenre()]">Classics</a>
+  <a class="navbar-brand" [routerLink]="['/selection',getCategory('short-movies'),getGenre()]">Short movies</a>
+  <a class="navbar-brand" [routerLink]="['/selection',getCategory('nomination'),getGenre()]">Nomination winners</a>
+  <a class="navbar-brand" [routerLink]="['/selection',getCategory('series'),getGenre()]">Series</a>
+  <a class="navbar-brand" [routerLink]="['/selection',getCategory('cartoons'),getGenre()]">Cartoons</a>
 </nav>
