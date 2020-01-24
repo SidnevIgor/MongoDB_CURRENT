@@ -15,6 +15,6 @@ export class CategoryComponent implements OnInit {
     this.route.paramMap.subscribe((params)=>{
       this.searchCategory = params.get('category');
       this.searchGenre = params.get('genre');
-    });
+    }); 
   }
 }
