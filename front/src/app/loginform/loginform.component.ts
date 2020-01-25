@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'loginform',
@@ -7,6 +8,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./loginform.component.css']
 })
 export class LoginformComponent{
+  constructor(private service: PostService){}
+  url = "http://localhost:3000/api/auth";
   form = new FormGroup({
     email: new FormControl('',[
       Validators.required,
@@ -19,4 +22,14 @@ export class LoginformComponent{
       Validators.maxLength(255)
     ])
   });
+  enterUser(email:HTMLInputElement, password:HTMLInputElement){
+    let user = {
+      "email": email.value,
+      "password": password.value
+    };
+    this.service.addPost(user,this.url)
+    .subscribe((responce)=>{
+      console.log(responce);
+    });
+  }
 }

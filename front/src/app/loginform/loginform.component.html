@@ -1,7 +1,7 @@
 <form [formGroup]="form">
   <div class="form-group">
     <label for="email">Email*</label>
-    <input type="text" id="email" formControlName="email" class="form-control">
+    <input type="text" id="email" formControlName="email" class="form-control" #email>
     <div class="alert alert-danger" *ngIf="form.get('email').touched && form.get('email').invalid">
       <div *ngIf="form.get('email').errors.required">The email should be filled</div>
       <div *ngIf="form.get('email').errors.minlength">The minimum length is {{form.get('email').errors.minlength.requiredLength}}</div>
@@ -10,11 +10,11 @@
   </div>
   <div class="form-group">
     <label for="password">Password*</label>
-    <input type="text" id="password" formControlName="password" class="form-control">
+    <input type="text" id="password" formControlName="password" class="form-control" #password>
     <div class="alert alert-danger" *ngIf="form.get('password').touched && form.get('password').invalid">
       <div *ngIf="form.get('password').errors.required">The password should be filled</div>
       <div *ngIf="form.get('password').errors.minlength">The minimum password length is {{form.get('password').errors.minlength.requiredLength}}</div>
     </div>
   </div>
-  <button class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+  <button class="btn btn-primary" [disabled]="!form.valid" (click)="enterUser(email,password)">Submit</button>
 </form>
