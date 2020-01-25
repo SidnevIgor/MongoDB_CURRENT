@@ -2,4 +2,6 @@
   <a class="navbar-brand" routerLink="">Home</a>
   <a class="navbar-brand" *ngFor="let category of categories"
   routerLink="/selection" [queryParams]="{category: getCategory(category), genre: getGenre()||'all-genres'}">{{category}}</a>
+  <a class="navbar-brand" routerLink="/register">Register</a>
+  <a class="navbar-brand" routerLink="/login">Login</a>
 </nav>

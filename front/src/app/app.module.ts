@@ -40,6 +40,8 @@ import { LeftbarComponent } from './leftbar/leftbar.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path:'selection', component: CategoryComponent},
+      {path: 'register', component: ContactFormComponent},
+      {path: 'login', component: LoginformComponent},
       {path:'**', component: NotFoundComponent}
     ])
   ],

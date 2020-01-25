@@ -12,9 +12,9 @@ export class CategoryComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(){
-    this.route.paramMap.subscribe((params)=>{
+    this.route.queryParamMap.subscribe((params)=>{
       this.searchCategory = params.get('category');
       this.searchGenre = params.get('genre');
-    }); 
+    });
   }
 }
