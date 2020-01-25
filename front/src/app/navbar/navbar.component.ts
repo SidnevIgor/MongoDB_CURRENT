@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     return category;
   }
   getGenre():string{
-    this.genre = this.route.snapshot.paramMap.get('genre');
+    this.genre = this.route.snapshot.queryParamMap.get('genre');
     return this.genre;
     //return 'all-genres';
   }

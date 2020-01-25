@@ -39,7 +39,7 @@ import { LeftbarComponent } from './leftbar/leftbar.component';
     HttpModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path:'selection/:category/:genre', component: CategoryComponent},
+      {path:'selection', component: CategoryComponent},
       {path:'**', component: NotFoundComponent}
     ])
   ],

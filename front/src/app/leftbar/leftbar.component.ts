@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'leftbar',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class LeftbarComponent implements OnInit {
   genres=['Thriller','Horror','Romance','Travel','Comedy','Documentary'];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -16,6 +17,7 @@ export class LeftbarComponent implements OnInit {
     return genre;
   }
   getCategory():string{
-    return 'all-categories';
-  } 
+    return this.route.snapshot.queryParamMap.get('category');
+    //return 'all-categories';
+  }
 }

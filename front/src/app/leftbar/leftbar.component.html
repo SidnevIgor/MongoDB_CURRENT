@@ -1,4 +1,4 @@
 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-  <a *ngFor="let genre of genres" class="nav-link"  [routerLink]="['/selection',getCategory(),getGenre(genre)]"
+  <a *ngFor="let genre of genres" class="nav-link"  routerLink="/selection" [queryParams]="{category: getCategory()||'all-categories', genre: getGenre(genre)}"
   data-toggle="pill" role="tab"  routerLinkActive="active current">{{genre}}</a>
 </div>
