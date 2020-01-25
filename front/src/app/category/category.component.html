@@ -1,6 +1,8 @@
-<p>
-  Category: {{searchCategory}}
-</p>
-<p>
-  Genre: {{searchGenre}}
-</p>
+<div *ngIf="isLoggedIn()">
+  <p>
+    Category: {{searchCategory}}
+  </p>
+  <p>
+    Genre: {{searchGenre}}
+  </p>
+</div>

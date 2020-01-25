@@ -22,4 +22,7 @@ export class NavbarComponent implements OnInit {
     return this.genre;
     //return 'all-genres';
   }
+  logOut(){
+    localStorage.removeItem('token');
+  }
 }

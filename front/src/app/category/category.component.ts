@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { JwtHelper } from 'angular2-jwt';
 
 @Component({
   selector: 'category',
@@ -16,5 +17,14 @@ export class CategoryComponent implements OnInit {
       this.searchCategory = params.get('category');
       this.searchGenre = params.get('genre');
     });
+  }
+  isLoggedIn(){
+    let jwtHelper = new JwtHelper();
+    let token = localStorage.getItem('token');
+    if(!token) return false;
+    else{
+      let isExpired = jwtHelper.isTokenExpired(token);
+      return !isExpired;
+    }
   }
 }

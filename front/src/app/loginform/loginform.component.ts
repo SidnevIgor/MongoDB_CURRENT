@@ -36,6 +36,7 @@ export class LoginformComponent{
     this.service.addPost(user,this.url)
     .subscribe((responce)=>{
       console.log(responce);
+      localStorage.setItem('token', responce._body);
       this.errorMessage = null;
     },(error: AppError)=>{
       if(error instanceof BadRequestError) this.errorMessage = "Invalid Email or Password";
