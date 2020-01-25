@@ -2,10 +2,11 @@ import { Component} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 //POST service
 import { PostService } from '../services/post.service';
-//error services
+//services
 import { AppError } from '../common/app-error';
 import { BadRequestError } from '../common/bad-request-error';
 import { NotFoundError } from '../common/not-found-error';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'loginform',
@@ -13,7 +14,7 @@ import { NotFoundError } from '../common/not-found-error';
   styleUrls: ['./loginform.component.css']
 })
 export class LoginformComponent{
-  constructor(private service: PostService){}
+  constructor(private service: PostService, private auth: AuthService){}
   errorMessage:string;
   url = "http://localhost:3000/api/auth";
   form = new FormGroup({
@@ -36,7 +37,7 @@ export class LoginformComponent{
     this.service.addPost(user,this.url)
     .subscribe((responce)=>{
       console.log(responce);
-      localStorage.setItem('token', responce._body);
+      this.auth.logIn(responce);
       this.errorMessage = null;
     },(error: AppError)=>{
       if(error instanceof BadRequestError) this.errorMessage = "Invalid Email or Password";

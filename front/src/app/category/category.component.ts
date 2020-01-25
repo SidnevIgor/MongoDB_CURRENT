@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { JwtHelper } from 'angular2-jwt';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'category',
@@ -10,21 +10,12 @@ import { JwtHelper } from 'angular2-jwt';
 export class CategoryComponent implements OnInit {
   searchCategory: string;
   searchGenre: string;
-  constructor(private route: ActivatedRoute) { }
-
+  constructor(private route: ActivatedRoute, private auth: AuthService){
+  }
   ngOnInit(){
     this.route.queryParamMap.subscribe((params)=>{
       this.searchCategory = params.get('category');
       this.searchGenre = params.get('genre');
     });
-  }
-  isLoggedIn(){
-    let jwtHelper = new JwtHelper();
-    let token = localStorage.getItem('token');
-    if(!token) return false;
-    else{
-      let isExpired = jwtHelper.isTokenExpired(token);
-      return !isExpired;
-    }
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'navbar',
@@ -9,10 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 export class NavbarComponent implements OnInit {
   genre: string;
   categories = ['New','Classics','Shorties','Nomination','Series','Cartoons'];
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute, private auth: AuthService) { }
 
   ngOnInit(){
-
   }
   getCategory(category:string):string{
     return category;
@@ -20,9 +20,5 @@ export class NavbarComponent implements OnInit {
   getGenre():string{
     this.genre = this.route.snapshot.queryParamMap.get('genre');
     return this.genre;
-    //return 'all-genres';
-  }
-  logOut(){
-    localStorage.removeItem('token');
   }
 }

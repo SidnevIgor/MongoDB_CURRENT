@@ -12,12 +12,12 @@ import { PostsComponent } from './posts/posts.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-
-//Services
-import { PostService } from './services/post.service';
 import { CategoryComponent } from './category/category.component';
 import { LeftbarComponent } from './leftbar/leftbar.component';
 
+//Services
+import { PostService } from './services/post.service';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -45,7 +45,7 @@ import { LeftbarComponent } from './leftbar/leftbar.component';
       {path:'**', component: NotFoundComponent}
     ])
   ],
-  providers: [PostService],
+  providers: [PostService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
