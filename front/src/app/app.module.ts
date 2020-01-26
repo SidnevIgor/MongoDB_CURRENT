@@ -18,6 +18,7 @@ import { LeftbarComponent } from './leftbar/leftbar.component';
 //Services
 import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -39,13 +40,13 @@ import { AuthService } from './services/auth.service';
     HttpModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path:'selection', component: CategoryComponent},
+      {path:'selection', component: CategoryComponent, canActivate: [AuthGuard]},
       {path: 'register', component: ContactFormComponent},
       {path: 'login', component: LoginformComponent},
       {path:'**', component: NotFoundComponent}
     ])
   ],
-  providers: [PostService,AuthService],
+  providers: [PostService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
