@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 //POST service
 import { PostService } from '../services/post.service';
@@ -14,7 +15,10 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./loginform.component.css']
 })
 export class LoginformComponent{
-  constructor(private service: PostService, private auth: AuthService){}
+  constructor(private service: PostService,
+              private auth: AuthService,
+              private router: Router,
+              private route: ActivatedRoute){}
   errorMessage:string;
   url = "http://localhost:3000/api/auth";
   form = new FormGroup({
@@ -36,9 +40,10 @@ export class LoginformComponent{
     };
     this.service.addPost(user,this.url)
     .subscribe((responce)=>{
-      console.log(responce);
       this.auth.logIn(responce);
       this.errorMessage = null;
+      //let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+      this.router.navigate(['/']);
     },(error: AppError)=>{
       if(error instanceof BadRequestError) this.errorMessage = "Invalid Email or Password";
       else{

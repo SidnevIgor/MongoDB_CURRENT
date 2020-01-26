@@ -505,3 +505,5 @@
 {"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2020-01-26T15:11:04.816Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2020-01-26T16:40:18.956Z"}
 {"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2020-01-26T16:40:18.980Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-01-26T16:55:18.166Z"}
+{"level":"info","message":"Connected to  mongodb://localhost/genres","timestamp":"2020-01-26T16:55:18.182Z"}
