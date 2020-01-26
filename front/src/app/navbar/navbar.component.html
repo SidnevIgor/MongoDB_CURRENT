@@ -5,4 +5,8 @@
   <a class="navbar-brand" routerLink="/register">Register</a>
   <a class="navbar-brand" routerLink="/login">Login</a>
   <a class="navbar-brand" (click)="auth.logOut()">Log Out</a>
+  <span class="userinfo" *ngIf="auth.isLoggedIn()">
+    <img src="/assets/test.jpg" class="rounded-circle">
+    <p>{{auth.getUser()?auth.getUser().name:null}}</p>
+  </span>
 </nav>

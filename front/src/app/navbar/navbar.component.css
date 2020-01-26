@@ -7,3 +7,10 @@
 .navbar-brand:hover{
   color: red;
 }
+.rounded-circle{
+  height: 40px;
+  width: 40px;
+}
+.userinfo{
+  float: right;
+}

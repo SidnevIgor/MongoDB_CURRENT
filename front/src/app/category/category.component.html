@@ -1,4 +1,5 @@
 <div *ngIf="auth.isLoggedIn()">
+  <p *ngIf="auth.getUser().isAdmin">Admin user</p>
   <p>
     Category: {{searchCategory}}
   </p>
