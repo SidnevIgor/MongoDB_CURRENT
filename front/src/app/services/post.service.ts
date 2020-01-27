@@ -42,7 +42,7 @@ export class PostService {
   getOptions(){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    let options = new RequestOptions({headers: headers});
+    let options = new RequestOptions({headers: headers}); 
     return options;
   }
   handleErrors(error:Response){
